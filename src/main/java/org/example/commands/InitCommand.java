@@ -5,6 +5,7 @@ import picocli.CommandLine;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 @CommandLine.Command(name="init", description = "Инициализация директорий")
@@ -15,22 +16,12 @@ public class InitCommand implements Runnable {
             File dir = new File("./system");
             if (!dir.exists()) dir.mkdir();
             File rolesFile = new File(dir, "roles.json");
-            File subjectFile = new File(dir, "subjects.json");
-            File objectFile = new File(dir, "objects.json");
 
             boolean rolesCreated = rolesFile.createNewFile();
-            boolean subjectsCreated = subjectFile.createNewFile();
-            boolean objectsCreated = objectFile.createNewFile();
 
             ObjectMapper mapper = new ObjectMapper();
             if (rolesCreated) {
-                mapper.writeValue(rolesFile, new HashMap<>());
-            }
-            if (subjectsCreated) {
-                mapper.writeValue(subjectFile, new HashMap<>());
-            }
-            if (objectsCreated) {
-                mapper.writeValue(objectFile, new HashMap<>());
+                mapper.writeValue(rolesFile, new ArrayList<>());
             }
 
             System.out.println("Инициализация завершена.");

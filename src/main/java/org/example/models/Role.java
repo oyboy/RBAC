@@ -1,28 +1,30 @@
 package org.example.models;
 
-import java.util.List;
 import java.util.Set;
 
 public class Role {
     private String name;
-    private List<String> subjects;
-    private List<ObjectModel> objects;
+    private Set<String> subjects;
+    private Set<String> permissions;
+
+    public Role() {
+    }
 
     public String getName() {
         return name;
     }
 
-    public List<String> getSubjects() {
+    public Set<String> getSubjects() {
         return subjects;
     }
 
-    public List<ObjectModel> getObjects() {
-        return objects;
+    public Set<String> getPermissions() {
+        return permissions;
     }
 
-    public Role(String name, List<String> subjects, List<ObjectModel> objects) {
+    public Role(String name, Set<String> subjects, Set<String> permissions) {
         this.name = name;
         this.subjects = subjects;
-        this.objects = objects;
+        this.permissions = permissions;
     }
 }

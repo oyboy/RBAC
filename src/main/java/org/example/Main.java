@@ -1,7 +1,6 @@
 package org.example;
 
-import org.example.commands.CreateRoleCommand;
-import org.example.commands.InitCommand;
+import org.example.commands.*;
 import picocli.CommandLine;
 
 import java.util.Scanner;
@@ -10,7 +9,6 @@ import java.util.Scanner;
         InitCommand.class,
         CreateRoleCommand.class,
         MergeRolesCommand.class,
-        CreateObjectCommand.class,
         AssignUserCommand.class,
         GrantPermissionCommand.class
 })
@@ -37,7 +35,6 @@ public class Main implements Runnable {
             String[] commandArgs = input.split(" ");
             new CommandLine(new Main()).execute(commandArgs);
         }
-
         scanner.close();
     }
 }

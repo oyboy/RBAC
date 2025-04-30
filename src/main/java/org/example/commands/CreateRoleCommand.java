@@ -6,6 +6,7 @@ import org.example.models.Role;
 import picocli.CommandLine;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @CommandLine.Command(name="create-role", description = "Создание новой роли")
@@ -23,7 +24,7 @@ public class CreateRoleCommand implements Runnable {
             return;
         }
 
-        Role role = new Role(name, new ArrayList<>(), new ArrayList<>());
+        Role role = new Role(name, new HashSet<>(), new HashSet<>());
         roles.add(role);
         roleMatrix.writeList(roles);
 
