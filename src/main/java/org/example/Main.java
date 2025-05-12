@@ -10,7 +10,9 @@ import java.util.Scanner;
         CreateRoleCommand.class,
         MergeRolesCommand.class,
         AssignUserCommand.class,
-        GrantPermissionCommand.class
+        GrantPermissionCommand.class,
+        ExtendRoleCommand.class,
+        SwitchRoleCommand.class
 })
 public class Main implements Runnable {
     @Override

@@ -5,7 +5,6 @@ import org.example.Type;
 import org.example.models.Role;
 import picocli.CommandLine;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
