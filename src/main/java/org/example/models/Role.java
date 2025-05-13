@@ -6,8 +6,17 @@ public class Role {
     private String name;
     private Set<String> subjects;
     private Set<String> permissions;
+    private Set<String> parents;
 
     public Role() {
+    }
+
+    public Set<String> getParents() {
+        return parents;
+    }
+
+    public void setParents(Set<String> parents) {
+        this.parents = parents;
     }
 
     public String getName() {
@@ -20,6 +29,10 @@ public class Role {
 
     public Set<String> getPermissions() {
         return permissions;
+    }
+
+    public void setPermissions(Set<String> permissions) {
+        this.permissions = permissions;
     }
 
     public Role(String name, Set<String> subjects, Set<String> permissions) {
